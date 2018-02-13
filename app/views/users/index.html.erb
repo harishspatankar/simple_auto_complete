@@ -1,0 +1,33 @@
+<html>
+<head>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+  <script src="/app/assets/javascripts/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.cs" /> -->
+  <link rel="stylesheet" href="/app/assets/stylesheets/bootstrap.min.css" />
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="/app/assets/javascripts/bootstrap.min.js"></script>
+</head>
+<h1>Users</h1>
+<div>
+  <table border="1" id="user-data-table">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<br>
+<br>
+<div>
+  <form methods='get' action='/search_suggestions'>
+    <input type= "text" id="search" name= "search" placeholder="search user" autocomplete="off">
+    <ul id="result"></ul>
+  </form>
+</div>
+</html>
